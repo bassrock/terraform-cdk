@@ -99,7 +99,7 @@ export class AcmCertificateOptions extends cdktf.ComplexObject {
   public get certificateTransparencyLoggingPreference() {
     return this.getStringAttribute('certificate_transparency_logging_preference');
   }
-  public set certificateTransparencyLoggingPreference(value: string ) {
+  public set certificateTransparencyLoggingPreference(value: string) {
     this._certificateTransparencyLoggingPreference = value;
   }
   public resetCertificateTransparencyLoggingPreference() {
@@ -168,7 +168,7 @@ export class AcmCertificate extends cdktf.TerraformResource {
   public get certificateAuthorityArn() {
     return this.getStringAttribute('certificate_authority_arn');
   }
-  public set certificateAuthorityArn(value: string ) {
+  public set certificateAuthorityArn(value: string) {
     this._certificateAuthorityArn = value;
   }
   public resetCertificateAuthorityArn() {
@@ -184,7 +184,7 @@ export class AcmCertificate extends cdktf.TerraformResource {
   public get certificateBody() {
     return this.getStringAttribute('certificate_body');
   }
-  public set certificateBody(value: string ) {
+  public set certificateBody(value: string) {
     this._certificateBody = value;
   }
   public resetCertificateBody() {
@@ -200,7 +200,7 @@ export class AcmCertificate extends cdktf.TerraformResource {
   public get certificateChain() {
     return this.getStringAttribute('certificate_chain');
   }
-  public set certificateChain(value: string ) {
+  public set certificateChain(value: string) {
     this._certificateChain = value;
   }
   public resetCertificateChain() {
@@ -242,7 +242,7 @@ export class AcmCertificate extends cdktf.TerraformResource {
   public get privateKey() {
     return this.getStringAttribute('private_key');
   }
-  public set privateKey(value: string ) {
+  public set privateKey(value: string) {
     this._privateKey = value;
   }
   public resetPrivateKey() {
@@ -274,7 +274,7 @@ export class AcmCertificate extends cdktf.TerraformResource {
   public get tags() {
     return this.interpolationForAttribute('tags') as any;
   }
-  public set tags(value: { [key: string]: string } ) {
+  public set tags(value: { [key: string]: string }) {
     this._tags = value;
   }
   public resetTags() {
@@ -307,11 +307,11 @@ export class AcmCertificate extends cdktf.TerraformResource {
   }
 
   // options - computed: false, optional: true, required: false
-  private _options?: IAcmCertificateOptions;
+  private _options?: AcmCertificateOptions;
   public get options() {
     return this.interpolationForAttribute('options') as any;
   }
-  public set options(value: AcmCertificateOptions ) {
+  public set options(value: AcmCertificateOptions) {
     this._options = value;
   }
   public resetOptions() {
