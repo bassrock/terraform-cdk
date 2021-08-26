@@ -252,7 +252,8 @@ class Parser {
             isProvider: parentType.isProvider,
           }),
         ],
-        blockAttributes
+        blockAttributes,
+        blockType.nesting_mode === "list" && blockType.max_items === 1
       );
 
       // define the attribute
@@ -291,6 +292,7 @@ class Parser {
               struct,
               isOptional: optional,
               isRequired: required,
+              isSingleItem: true,
             }),
             description: `${terraformName} block`,
             storageName: `_${name}`,
@@ -329,6 +331,7 @@ class Parser {
               isList: true,
               isOptional: optional,
               isRequired: required,
+              isSingleItem: blockType.max_items === 1,
             }),
             description: `${terraformName} block`,
             storageName: `_${name}`,
@@ -383,14 +386,19 @@ class Parser {
     return this.addStruct(scope, attributes);
   }
 
-  private addStruct(scope: Scope[], attributes: AttributeModel[]) {
+  private addStruct(
+    scope: Scope[],
+    attributes: AttributeModel[],
+    isSingleItem = false
+  ) {
     const name = uniqueClassName(
       toPascalCase(scope.map((x) => toSnakeCase(x.name)).join("_"))
     );
     const parent = scope[scope.length - 1];
-    const isClass = parent.isComputed && !parent.isOptional;
+    // blockType.nesting_mode => list/set & blockType.max_items === 1,
+    const isClass = (parent.isComputed && !parent.isOptional) || isSingleItem;
     const isAnonymous = true;
-    const s = new Struct(name, attributes, isClass, isAnonymous);
+    const s = new Struct(name, attributes, isClass, isAnonymous, isSingleItem);
     this.structs.push(s);
     return s;
   }
