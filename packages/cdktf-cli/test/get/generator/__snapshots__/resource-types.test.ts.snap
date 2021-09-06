@@ -120,7 +120,7 @@ export interface CloudfrontDistributionCacheBehaviorForwardedValuesCookies {
   readonly whitelistedNames?: string[];
 }
 
-function cloudfrontDistributionCacheBehaviorForwardedValuesCookiesToTerraform(struct?: CloudfrontDistributionCacheBehaviorForwardedValuesCookies): any {
+export function cloudfrontDistributionCacheBehaviorForwardedValuesCookiesToTerraform(struct?: CloudfrontDistributionCacheBehaviorForwardedValuesCookies): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     forward: cdktf.stringToTerraform(struct!.forward),
@@ -149,7 +149,7 @@ export interface CloudfrontDistributionCacheBehaviorForwardedValues {
   readonly cookies: CloudfrontDistributionCacheBehaviorForwardedValuesCookies[];
 }
 
-function cloudfrontDistributionCacheBehaviorForwardedValuesToTerraform(struct?: CloudfrontDistributionCacheBehaviorForwardedValues): any {
+export function cloudfrontDistributionCacheBehaviorForwardedValuesToTerraform(struct?: CloudfrontDistributionCacheBehaviorForwardedValues): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     headers: cdktf.listMapper(cdktf.stringToTerraform)(struct!.headers),
@@ -174,7 +174,7 @@ export interface CloudfrontDistributionCacheBehaviorLambdaFunctionAssociation {
   readonly lambdaArn: string;
 }
 
-function cloudfrontDistributionCacheBehaviorLambdaFunctionAssociationToTerraform(struct?: CloudfrontDistributionCacheBehaviorLambdaFunctionAssociation): any {
+export function cloudfrontDistributionCacheBehaviorLambdaFunctionAssociationToTerraform(struct?: CloudfrontDistributionCacheBehaviorLambdaFunctionAssociation): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     event_type: cdktf.stringToTerraform(struct!.eventType),
@@ -246,7 +246,7 @@ export interface CloudfrontDistributionCacheBehavior {
   readonly lambdaFunctionAssociation?: CloudfrontDistributionCacheBehaviorLambdaFunctionAssociation[];
 }
 
-function cloudfrontDistributionCacheBehaviorToTerraform(struct?: CloudfrontDistributionCacheBehavior): any {
+export function cloudfrontDistributionCacheBehaviorToTerraform(struct?: CloudfrontDistributionCacheBehavior): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     allowed_methods: cdktf.listMapper(cdktf.stringToTerraform)(struct!.allowedMethods),
@@ -285,7 +285,7 @@ export interface CloudfrontDistributionCustomErrorResponse {
   readonly responsePagePath?: string;
 }
 
-function cloudfrontDistributionCustomErrorResponseToTerraform(struct?: CloudfrontDistributionCustomErrorResponse): any {
+export function cloudfrontDistributionCustomErrorResponseToTerraform(struct?: CloudfrontDistributionCustomErrorResponse): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     error_caching_min_ttl: cdktf.numberToTerraform(struct!.errorCachingMinTtl),
@@ -306,7 +306,7 @@ export interface CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookie
   readonly whitelistedNames?: string[];
 }
 
-function cloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesToTerraform(struct?: CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies): any {
+export function cloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookiesToTerraform(struct?: CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     forward: cdktf.stringToTerraform(struct!.forward),
@@ -335,7 +335,7 @@ export interface CloudfrontDistributionDefaultCacheBehaviorForwardedValues {
   readonly cookies: CloudfrontDistributionDefaultCacheBehaviorForwardedValuesCookies[];
 }
 
-function cloudfrontDistributionDefaultCacheBehaviorForwardedValuesToTerraform(struct?: CloudfrontDistributionDefaultCacheBehaviorForwardedValues): any {
+export function cloudfrontDistributionDefaultCacheBehaviorForwardedValuesToTerraform(struct?: CloudfrontDistributionDefaultCacheBehaviorForwardedValues): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     headers: cdktf.listMapper(cdktf.stringToTerraform)(struct!.headers),
@@ -360,7 +360,7 @@ export interface CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssocia
   readonly lambdaArn: string;
 }
 
-function cloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociationToTerraform(struct?: CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation): any {
+export function cloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociationToTerraform(struct?: CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     event_type: cdktf.stringToTerraform(struct!.eventType),
@@ -428,7 +428,7 @@ export interface CloudfrontDistributionDefaultCacheBehavior {
   readonly lambdaFunctionAssociation?: CloudfrontDistributionDefaultCacheBehaviorLambdaFunctionAssociation[];
 }
 
-function cloudfrontDistributionDefaultCacheBehaviorToTerraform(struct?: CloudfrontDistributionDefaultCacheBehavior): any {
+export function cloudfrontDistributionDefaultCacheBehaviorToTerraform(struct?: CloudfrontDistributionDefaultCacheBehavior): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     allowed_methods: cdktf.listMapper(cdktf.stringToTerraform)(struct!.allowedMethods),
@@ -462,7 +462,7 @@ export interface CloudfrontDistributionLoggingConfig {
   readonly prefix?: string;
 }
 
-function cloudfrontDistributionLoggingConfigToTerraform(struct?: CloudfrontDistributionLoggingConfig): any {
+export function cloudfrontDistributionLoggingConfigToTerraform(struct?: CloudfrontDistributionLoggingConfig): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     bucket: cdktf.stringToTerraform(struct!.bucket),
@@ -482,7 +482,7 @@ export interface CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookie
   readonly whitelistedNames?: string[];
 }
 
-function cloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesToTerraform(struct?: CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies): any {
+export function cloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookiesToTerraform(struct?: CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     forward: cdktf.stringToTerraform(struct!.forward),
@@ -511,7 +511,7 @@ export interface CloudfrontDistributionOrderedCacheBehaviorForwardedValues {
   readonly cookies: CloudfrontDistributionOrderedCacheBehaviorForwardedValuesCookies[];
 }
 
-function cloudfrontDistributionOrderedCacheBehaviorForwardedValuesToTerraform(struct?: CloudfrontDistributionOrderedCacheBehaviorForwardedValues): any {
+export function cloudfrontDistributionOrderedCacheBehaviorForwardedValuesToTerraform(struct?: CloudfrontDistributionOrderedCacheBehaviorForwardedValues): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     headers: cdktf.listMapper(cdktf.stringToTerraform)(struct!.headers),
@@ -536,7 +536,7 @@ export interface CloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssocia
   readonly lambdaArn: string;
 }
 
-function cloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssociationToTerraform(struct?: CloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssociation): any {
+export function cloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssociationToTerraform(struct?: CloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssociation): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     event_type: cdktf.stringToTerraform(struct!.eventType),
@@ -608,7 +608,7 @@ export interface CloudfrontDistributionOrderedCacheBehavior {
   readonly lambdaFunctionAssociation?: CloudfrontDistributionOrderedCacheBehaviorLambdaFunctionAssociation[];
 }
 
-function cloudfrontDistributionOrderedCacheBehaviorToTerraform(struct?: CloudfrontDistributionOrderedCacheBehavior): any {
+export function cloudfrontDistributionOrderedCacheBehaviorToTerraform(struct?: CloudfrontDistributionOrderedCacheBehavior): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     allowed_methods: cdktf.listMapper(cdktf.stringToTerraform)(struct!.allowedMethods),
@@ -639,7 +639,7 @@ export interface CloudfrontDistributionOriginCustomHeader {
   readonly value: string;
 }
 
-function cloudfrontDistributionOriginCustomHeaderToTerraform(struct?: CloudfrontDistributionOriginCustomHeader): any {
+export function cloudfrontDistributionOriginCustomHeaderToTerraform(struct?: CloudfrontDistributionOriginCustomHeader): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     name: cdktf.stringToTerraform(struct!.name),
@@ -674,7 +674,7 @@ export interface CloudfrontDistributionOriginCustomOriginConfig {
   readonly originSslProtocols: string[];
 }
 
-function cloudfrontDistributionOriginCustomOriginConfigToTerraform(struct?: CloudfrontDistributionOriginCustomOriginConfig): any {
+export function cloudfrontDistributionOriginCustomOriginConfigToTerraform(struct?: CloudfrontDistributionOriginCustomOriginConfig): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     http_port: cdktf.numberToTerraform(struct!.httpPort),
@@ -693,7 +693,7 @@ export interface CloudfrontDistributionOriginS3OriginConfig {
   readonly originAccessIdentity: string;
 }
 
-function cloudfrontDistributionOriginS3OriginConfigToTerraform(struct?: CloudfrontDistributionOriginS3OriginConfig): any {
+export function cloudfrontDistributionOriginS3OriginConfigToTerraform(struct?: CloudfrontDistributionOriginS3OriginConfig): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     origin_access_identity: cdktf.stringToTerraform(struct!.originAccessIdentity),
@@ -733,7 +733,7 @@ export interface CloudfrontDistributionOrigin {
   readonly s3OriginConfig?: CloudfrontDistributionOriginS3OriginConfig[];
 }
 
-function cloudfrontDistributionOriginToTerraform(struct?: CloudfrontDistributionOrigin): any {
+export function cloudfrontDistributionOriginToTerraform(struct?: CloudfrontDistributionOrigin): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     domain_name: cdktf.stringToTerraform(struct!.domainName),
@@ -752,7 +752,7 @@ export interface CloudfrontDistributionOriginGroupFailoverCriteria {
   readonly statusCodes: number[];
 }
 
-function cloudfrontDistributionOriginGroupFailoverCriteriaToTerraform(struct?: CloudfrontDistributionOriginGroupFailoverCriteria): any {
+export function cloudfrontDistributionOriginGroupFailoverCriteriaToTerraform(struct?: CloudfrontDistributionOriginGroupFailoverCriteria): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     status_codes: cdktf.listMapper(cdktf.numberToTerraform)(struct!.statusCodes),
@@ -766,7 +766,7 @@ export interface CloudfrontDistributionOriginGroupMember {
   readonly originId: string;
 }
 
-function cloudfrontDistributionOriginGroupMemberToTerraform(struct?: CloudfrontDistributionOriginGroupMember): any {
+export function cloudfrontDistributionOriginGroupMemberToTerraform(struct?: CloudfrontDistributionOriginGroupMember): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     origin_id: cdktf.stringToTerraform(struct!.originId),
@@ -792,7 +792,7 @@ export interface CloudfrontDistributionOriginGroup {
   readonly member: CloudfrontDistributionOriginGroupMember[];
 }
 
-function cloudfrontDistributionOriginGroupToTerraform(struct?: CloudfrontDistributionOriginGroup): any {
+export function cloudfrontDistributionOriginGroupToTerraform(struct?: CloudfrontDistributionOriginGroup): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     origin_id: cdktf.stringToTerraform(struct!.originId),
@@ -812,7 +812,7 @@ export interface CloudfrontDistributionRestrictionsGeoRestriction {
   readonly restrictionType: string;
 }
 
-function cloudfrontDistributionRestrictionsGeoRestrictionToTerraform(struct?: CloudfrontDistributionRestrictionsGeoRestriction): any {
+export function cloudfrontDistributionRestrictionsGeoRestrictionToTerraform(struct?: CloudfrontDistributionRestrictionsGeoRestriction): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     locations: cdktf.listMapper(cdktf.stringToTerraform)(struct!.locations),
@@ -829,7 +829,7 @@ export interface CloudfrontDistributionRestrictions {
   readonly geoRestriction: CloudfrontDistributionRestrictionsGeoRestriction[];
 }
 
-function cloudfrontDistributionRestrictionsToTerraform(struct?: CloudfrontDistributionRestrictions): any {
+export function cloudfrontDistributionRestrictionsToTerraform(struct?: CloudfrontDistributionRestrictions): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     geo_restriction: cdktf.listMapper(cloudfrontDistributionRestrictionsGeoRestrictionToTerraform)(struct!.geoRestriction),
@@ -859,7 +859,7 @@ export interface CloudfrontDistributionViewerCertificate {
   readonly sslSupportMethod?: string;
 }
 
-function cloudfrontDistributionViewerCertificateToTerraform(struct?: CloudfrontDistributionViewerCertificate): any {
+export function cloudfrontDistributionViewerCertificateToTerraform(struct?: CloudfrontDistributionViewerCertificate): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     acm_certificate_arn: cdktf.stringToTerraform(struct!.acmCertificateArn),
@@ -1541,7 +1541,7 @@ export interface S3BucketCorsRule {
   readonly maxAgeSeconds?: number;
 }
 
-function s3BucketCorsRuleToTerraform(struct?: S3BucketCorsRule): any {
+export function s3BucketCorsRuleToTerraform(struct?: S3BucketCorsRule): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     allowed_headers: cdktf.listMapper(cdktf.stringToTerraform)(struct!.allowedHeaders),
@@ -1571,7 +1571,7 @@ export interface S3BucketGrant {
   readonly uri?: string;
 }
 
-function s3BucketGrantToTerraform(struct?: S3BucketGrant): any {
+export function s3BucketGrantToTerraform(struct?: S3BucketGrant): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     id: cdktf.stringToTerraform(struct!.id),
@@ -1596,7 +1596,7 @@ export interface S3BucketLifecycleRuleExpiration {
   readonly expiredObjectDeleteMarker?: boolean | cdktf.IResolvable;
 }
 
-function s3BucketLifecycleRuleExpirationToTerraform(struct?: S3BucketLifecycleRuleExpiration): any {
+export function s3BucketLifecycleRuleExpirationToTerraform(struct?: S3BucketLifecycleRuleExpiration): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     date: cdktf.stringToTerraform(struct!.date),
@@ -1612,7 +1612,7 @@ export interface S3BucketLifecycleRuleNoncurrentVersionExpiration {
   readonly days?: number;
 }
 
-function s3BucketLifecycleRuleNoncurrentVersionExpirationToTerraform(struct?: S3BucketLifecycleRuleNoncurrentVersionExpiration): any {
+export function s3BucketLifecycleRuleNoncurrentVersionExpirationToTerraform(struct?: S3BucketLifecycleRuleNoncurrentVersionExpiration): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     days: cdktf.numberToTerraform(struct!.days),
@@ -1630,7 +1630,7 @@ export interface S3BucketLifecycleRuleNoncurrentVersionTransition {
   readonly storageClass: string;
 }
 
-function s3BucketLifecycleRuleNoncurrentVersionTransitionToTerraform(struct?: S3BucketLifecycleRuleNoncurrentVersionTransition): any {
+export function s3BucketLifecycleRuleNoncurrentVersionTransitionToTerraform(struct?: S3BucketLifecycleRuleNoncurrentVersionTransition): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     days: cdktf.numberToTerraform(struct!.days),
@@ -1653,7 +1653,7 @@ export interface S3BucketLifecycleRuleTransition {
   readonly storageClass: string;
 }
 
-function s3BucketLifecycleRuleTransitionToTerraform(struct?: S3BucketLifecycleRuleTransition): any {
+export function s3BucketLifecycleRuleTransitionToTerraform(struct?: S3BucketLifecycleRuleTransition): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     date: cdktf.stringToTerraform(struct!.date),
@@ -1709,7 +1709,7 @@ export interface S3BucketLifecycleRule {
   readonly transition?: S3BucketLifecycleRuleTransition[];
 }
 
-function s3BucketLifecycleRuleToTerraform(struct?: S3BucketLifecycleRule): any {
+export function s3BucketLifecycleRuleToTerraform(struct?: S3BucketLifecycleRule): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     abort_incomplete_multipart_upload_days: cdktf.numberToTerraform(struct!.abortIncompleteMultipartUploadDays),
@@ -1735,7 +1735,7 @@ export interface S3BucketLogging {
   readonly targetPrefix?: string;
 }
 
-function s3BucketLoggingToTerraform(struct?: S3BucketLogging): any {
+export function s3BucketLoggingToTerraform(struct?: S3BucketLogging): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     target_bucket: cdktf.stringToTerraform(struct!.targetBucket),
@@ -1758,7 +1758,7 @@ export interface S3BucketObjectLockConfigurationRuleDefaultRetention {
   readonly years?: number;
 }
 
-function s3BucketObjectLockConfigurationRuleDefaultRetentionToTerraform(struct?: S3BucketObjectLockConfigurationRuleDefaultRetention): any {
+export function s3BucketObjectLockConfigurationRuleDefaultRetentionToTerraform(struct?: S3BucketObjectLockConfigurationRuleDefaultRetention): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     days: cdktf.numberToTerraform(struct!.days),
@@ -1776,7 +1776,7 @@ export interface S3BucketObjectLockConfigurationRule {
   readonly defaultRetention: S3BucketObjectLockConfigurationRuleDefaultRetention[];
 }
 
-function s3BucketObjectLockConfigurationRuleToTerraform(struct?: S3BucketObjectLockConfigurationRule): any {
+export function s3BucketObjectLockConfigurationRuleToTerraform(struct?: S3BucketObjectLockConfigurationRule): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     default_retention: cdktf.listMapper(s3BucketObjectLockConfigurationRuleDefaultRetentionToTerraform)(struct!.defaultRetention),
@@ -1796,7 +1796,7 @@ export interface S3BucketObjectLockConfiguration {
   readonly rule?: S3BucketObjectLockConfigurationRule[];
 }
 
-function s3BucketObjectLockConfigurationToTerraform(struct?: S3BucketObjectLockConfiguration): any {
+export function s3BucketObjectLockConfigurationToTerraform(struct?: S3BucketObjectLockConfiguration): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     object_lock_enabled: cdktf.stringToTerraform(struct!.objectLockEnabled),
@@ -1811,7 +1811,7 @@ export interface S3BucketReplicationConfigurationRulesDestinationAccessControlTr
   readonly owner: string;
 }
 
-function s3BucketReplicationConfigurationRulesDestinationAccessControlTranslationToTerraform(struct?: S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation): any {
+export function s3BucketReplicationConfigurationRulesDestinationAccessControlTranslationToTerraform(struct?: S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     owner: cdktf.stringToTerraform(struct!.owner),
@@ -1843,7 +1843,7 @@ export interface S3BucketReplicationConfigurationRulesDestination {
   readonly accessControlTranslation?: S3BucketReplicationConfigurationRulesDestinationAccessControlTranslation[];
 }
 
-function s3BucketReplicationConfigurationRulesDestinationToTerraform(struct?: S3BucketReplicationConfigurationRulesDestination): any {
+export function s3BucketReplicationConfigurationRulesDestinationToTerraform(struct?: S3BucketReplicationConfigurationRulesDestination): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     account_id: cdktf.stringToTerraform(struct!.accountId),
@@ -1865,7 +1865,7 @@ export interface S3BucketReplicationConfigurationRulesFilter {
   readonly tags?: { [key: string]: string } | cdktf.IResolvable;
 }
 
-function s3BucketReplicationConfigurationRulesFilterToTerraform(struct?: S3BucketReplicationConfigurationRulesFilter): any {
+export function s3BucketReplicationConfigurationRulesFilterToTerraform(struct?: S3BucketReplicationConfigurationRulesFilter): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     prefix: cdktf.stringToTerraform(struct!.prefix),
@@ -1880,7 +1880,7 @@ export interface S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSse
   readonly enabled: boolean | cdktf.IResolvable;
 }
 
-function s3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsToTerraform(struct?: S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects): any {
+export function s3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsToTerraform(struct?: S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     enabled: cdktf.booleanToTerraform(struct!.enabled),
@@ -1896,7 +1896,7 @@ export interface S3BucketReplicationConfigurationRulesSourceSelectionCriteria {
   readonly sseKmsEncryptedObjects?: S3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjects[];
 }
 
-function s3BucketReplicationConfigurationRulesSourceSelectionCriteriaToTerraform(struct?: S3BucketReplicationConfigurationRulesSourceSelectionCriteria): any {
+export function s3BucketReplicationConfigurationRulesSourceSelectionCriteriaToTerraform(struct?: S3BucketReplicationConfigurationRulesSourceSelectionCriteria): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     sse_kms_encrypted_objects: cdktf.listMapper(s3BucketReplicationConfigurationRulesSourceSelectionCriteriaSseKmsEncryptedObjectsToTerraform)(struct!.sseKmsEncryptedObjects),
@@ -1940,7 +1940,7 @@ export interface S3BucketReplicationConfigurationRules {
   readonly sourceSelectionCriteria?: S3BucketReplicationConfigurationRulesSourceSelectionCriteria[];
 }
 
-function s3BucketReplicationConfigurationRulesToTerraform(struct?: S3BucketReplicationConfigurationRules): any {
+export function s3BucketReplicationConfigurationRulesToTerraform(struct?: S3BucketReplicationConfigurationRules): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     id: cdktf.stringToTerraform(struct!.id),
@@ -1966,7 +1966,7 @@ export interface S3BucketReplicationConfiguration {
   readonly rules: S3BucketReplicationConfigurationRules[];
 }
 
-function s3BucketReplicationConfigurationToTerraform(struct?: S3BucketReplicationConfiguration): any {
+export function s3BucketReplicationConfigurationToTerraform(struct?: S3BucketReplicationConfiguration): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     role: cdktf.stringToTerraform(struct!.role),
@@ -1985,7 +1985,7 @@ export interface S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEnc
   readonly sseAlgorithm: string;
 }
 
-function s3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultToTerraform(struct?: S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault): any {
+export function s3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultToTerraform(struct?: S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     kms_master_key_id: cdktf.stringToTerraform(struct!.kmsMasterKeyId),
@@ -2002,7 +2002,7 @@ export interface S3BucketServerSideEncryptionConfigurationRule {
   readonly applyServerSideEncryptionByDefault: S3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefault[];
 }
 
-function s3BucketServerSideEncryptionConfigurationRuleToTerraform(struct?: S3BucketServerSideEncryptionConfigurationRule): any {
+export function s3BucketServerSideEncryptionConfigurationRuleToTerraform(struct?: S3BucketServerSideEncryptionConfigurationRule): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     apply_server_side_encryption_by_default: cdktf.listMapper(s3BucketServerSideEncryptionConfigurationRuleApplyServerSideEncryptionByDefaultToTerraform)(struct!.applyServerSideEncryptionByDefault),
@@ -2018,7 +2018,7 @@ export interface S3BucketServerSideEncryptionConfiguration {
   readonly rule: S3BucketServerSideEncryptionConfigurationRule[];
 }
 
-function s3BucketServerSideEncryptionConfigurationToTerraform(struct?: S3BucketServerSideEncryptionConfiguration): any {
+export function s3BucketServerSideEncryptionConfigurationToTerraform(struct?: S3BucketServerSideEncryptionConfiguration): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     rule: cdktf.listMapper(s3BucketServerSideEncryptionConfigurationRuleToTerraform)(struct!.rule),
@@ -2036,7 +2036,7 @@ export interface S3BucketVersioning {
   readonly mfaDelete?: boolean | cdktf.IResolvable;
 }
 
-function s3BucketVersioningToTerraform(struct?: S3BucketVersioning): any {
+export function s3BucketVersioningToTerraform(struct?: S3BucketVersioning): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     enabled: cdktf.booleanToTerraform(struct!.enabled),
@@ -2063,7 +2063,7 @@ export interface S3BucketWebsite {
   readonly routingRules?: string;
 }
 
-function s3BucketWebsiteToTerraform(struct?: S3BucketWebsite): any {
+export function s3BucketWebsiteToTerraform(struct?: S3BucketWebsite): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     error_document: cdktf.stringToTerraform(struct!.errorDocument),
@@ -2610,7 +2610,7 @@ export interface SecurityGroupEgress {
   readonly toPort?: number;
 }
 
-function securityGroupEgressToTerraform(struct?: SecurityGroupEgress): any {
+export function securityGroupEgressToTerraform(struct?: SecurityGroupEgress): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     cidr_blocks: struct!.cidrBlocks === undefined ? null : cdktf.listMapper(cdktf.stringToTerraform)(struct!.cidrBlocks),
@@ -2664,7 +2664,7 @@ export interface SecurityGroupIngress {
   readonly toPort?: number;
 }
 
-function securityGroupIngressToTerraform(struct?: SecurityGroupIngress): any {
+export function securityGroupIngressToTerraform(struct?: SecurityGroupIngress): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     cidr_blocks: struct!.cidrBlocks === undefined ? null : cdktf.listMapper(cdktf.stringToTerraform)(struct!.cidrBlocks),
@@ -2690,7 +2690,7 @@ export interface SecurityGroupTimeouts {
   readonly delete?: string;
 }
 
-function securityGroupTimeoutsToTerraform(struct?: SecurityGroupTimeouts): any {
+export function securityGroupTimeoutsToTerraform(struct?: SecurityGroupTimeouts): any {
   if (!cdktf.canInspect(struct)) { return struct; }
   return {
     create: cdktf.stringToTerraform(struct!.create),
