@@ -20,6 +20,10 @@ type SetterType =
   | { __type: "set"; type: string }
   | { __type: "put"; type: string };
 
+function titleCase(value: string) {
+  return value[0].toUpperCase() + value.slice(1);
+}
+
 export class AttributesEmitter {
   constructor(private code: CodeMaker) {}
 
@@ -80,7 +84,7 @@ export class AttributesEmitter {
       getterType = { _type: "stored_class" };
     }
 
-    let setterType: SetterType = isStored
+    const setterType: SetterType = isStored
       ? att.type.isSingleItem
         ? {
             __type: "put",
@@ -129,7 +133,9 @@ export class AttributesEmitter {
       this.code.line(`this.${att.storageName} = value;`);
       this.code.closeBlock();
     } else if (setterType.__type === "put") {
-      this.code.openBlock(`public put${att.name}(value: ${setterType.type})`);
+      this.code.openBlock(
+        `public put${titleCase(att.name)}(value: ${setterType.type})`
+      );
       this.code.line(`this.${att.storageName} = value;`);
       this.code.closeBlock();
     }
@@ -244,9 +250,9 @@ export class AttributesEmitter {
   public getResetName(name: string, escape: boolean) {
     if (!name) return name;
     if (escape) {
-      return `resetTf${name[0].toUpperCase() + name.slice(1)}`;
+      return `resetTf${titleCase(name)}`;
     } else {
-      return `reset${name[0].toUpperCase() + name.slice(1)}`;
+      return `reset${titleCase(name)}`;
     }
   }
 
